@@ -80,6 +80,13 @@ javascript: (function () {
     }
     var jsonObj = JSON.stringify(Kmom);
     console.log(Kmom);
-    window.prompt("Copy to clipboard: Ctrl+C, Enter", jsonObj);
+    var myWindow = window.open("","","width=700,height=500");
+    var newContent = myWindow.document.createElement("textarea");
+    newContent.style.width = "698px";
+    newContent.style.height = "500px";
+    myWindow.document.body.appendChild(newContent);
+    newContent.innerHTML = jsonObj;
+    newContent.focus();
+    newContent.select();
 })();
 
